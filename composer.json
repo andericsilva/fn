@@ -1,0 +1,8 @@
+{
+    "name": "fn/fn",
+    "require": {},
+    "license": "MIT",
+    "autoload": {
+        "files": ["src/fn.php"]
+    }
+}
