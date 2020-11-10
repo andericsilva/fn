@@ -22,12 +22,6 @@ function fn(...$params){
     }
     if(file_exists($fileName)){
         if(@explode('/',$name)[0]=='view'){//caso seja view
-            $fn('intFunctions');//funções de tradução
-            //globais
-            $tempArr['fn']=$fn;//$fn sem prefixo global
-            $tempArr['cfg']=$fn("cfg");
-            extract($tempArr);
-            unset($tempArr);
             if(@is_array($params[1])){
                 $params[1][]['data']=$params[1];//$params[1] = $data
                 extract($params[1]);//sobrescreve as variáveis globais
