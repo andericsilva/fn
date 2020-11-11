@@ -1,9 +1,12 @@
 <?php
 $fns=null;
 function fn(...$params){
+    global $config;
+    global $db;
     global $fn;
     global $fns;
     global $root;
+    global $site;
     if(isset($params[0])){
         $name=$params[0];
         unset($params[0]);
@@ -19,6 +22,15 @@ function fn(...$params){
         $fileName=$fileName2;
     }else{
         $fileName=$fileName3;
+    }
+    if(isset($config)){
+        extract(['config',$config]);
+    }
+    if(isset($db)){
+        extract(['db',$db]);
+    }
+    if(isset($site)){
+        extract(['site',$site]);
     }
     if(file_exists($fileName)){
         if(@explode('/',$name)[0]=='view'){//caso seja view
